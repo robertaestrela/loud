@@ -365,6 +365,8 @@ button,input{font:inherit;color:inherit}
 .plan li span{display:flex;align-items:center;gap:12px}
 .plan li svg{flex:none;width:20px;height:20px;color:var(--ink)}
 .plan li b{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+.plan li .two{flex-direction:column;align-items:flex-start;gap:0}
+.plan li .two small{font:400 12px/16px var(--f-ui);color:var(--l-muted)}
 .plan li:last-child{border-bottom:0}
 .plan .fine{margin-top:auto;padding-top:24px;font:400 12px/16px var(--f-ui);color:var(--l-muted)}
 .split-bar{display:flex;gap:4px;height:8px;margin-top:24px}
@@ -639,7 +641,7 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border:0;border-radiu
       <div class="fa rv" style="--d:.1s"><svg><use href="#i-arrow"/></svg></div>
       <div class="fc app rv" style="--d:.2s"><span class="lg"><img class="onlight" src="assets/logos/loud.svg" alt="" data-b-src="logo"></span><p class="h3" data-b="name">LOUD</p><p class="p-m mut">Seu app, com a sua marca e o seu domínio.</p></div>
       <div class="fa rv" style="--d:.3s"><svg><use href="#i-arrow"/></svg></div>
-      <div class="fc money rv" style="--d:.4s"><span class="lbl">Receita sua</span><p class="big">75% do GGR</p><p class="p-m">Todo mês, até o dia 15.</p></div>
+      <div class="fc money rv" style="--d:.4s"><span class="lbl">Receita sua</span><p class="big">Todo mês</p><p class="p-m">O rake das partidas vira receita sua.</p></div>
     </div>
     <div class="res" data-stop="120">
       <div class="res-l">
@@ -848,10 +850,10 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border:0;border-radiu
       <div class="plan feat rv"><span class="badge">Sua sala</span><span class="lbl">Você recebe</span><p class="price">75%</p><p class="per">do GGR, todo mês</p>
         <div class="split-bar" aria-hidden="true"><i style="flex:75"></i><i style="flex:10"></i><i style="flex:10"></i><i style="flex:5"></i></div>
         <ul><li><span><svg><use href="#i-check"/></svg>Pagamento até o dia 15</span></li><li><span><svg><use href="#i-check"/></svg>Sem saldo negativo por desempenho</span></li><li><span><svg><use href="#i-check"/></svg>Painel on-line com tudo</span></li></ul>
-        <p class="fine">Com o S-Payment acima do mínimo (GGR acima de R$ 500 mil por mês).</p></div>
+        <p class="fine">Com o Sirius One acima do mínimo (GGR acima de R$ 500 mil por mês).</p></div>
       <div class="plan rv" style="--d:.1s"><span class="lbl">Taxas Sirius</span><p class="price">25%</p><p class="per">do GGR, compensado no extrato</p>
-        <ul><li><span>Taxa da plataforma</span><b>10% do rake</b></li><li><span>S-Payment</span><b>5% do GGR</b></li><li><span>Liquidity</span><b>10% do GGR</b></li></ul>
-        <p class="fine">O S-Payment tem mínimo de R$ 25 mil por mês. A liquidity dá acesso às mesas compartilhadas.</p></div>
+        <ul><li><span>Taxa dos jogos</span><b>10% do rake</b></li><li><span class="two">Sirius One<small>Player account manager</small></span><b>5% do GGR</b></li><li><span>Liquidity</span><b>10% do GGR</b></li></ul>
+        <p class="fine">O Sirius One tem mínimo de R$ 25 mil por mês. A liquidity dá acesso às mesas compartilhadas.</p></div>
       <div class="plan rv" style="--d:.2s"><span class="lbl">Setup da sala</span><p class="price">R$ 50 mil</p><p class="per">uma vez, na assinatura</p>
         <ul><li><span><svg><use href="#i-check"/></svg>Site e app com a sua marca</span></li><li><span><svg><use href="#i-check"/></svg>Domínio no seu nome</span></li><li><span><svg><use href="#i-check"/></svg>Personagem da marca</span></li><li><span><svg><use href="#i-check"/></svg>No ar em 1 semana</span></li></ul></div>
     </div>
@@ -868,7 +870,7 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border:0;border-radiu
     <p class="kick rv"><b>11</b><i></i>A conta</p>
     <div class="head">
       <h2 class="ttl l rv"><span class="olrow"><span class="ol" data-em="6.6200"><svg viewBox="79 -700 6620 700" style="--em:6.6200" aria-hidden="true" focusable="false"><path fill="currentColor" d="M79 0H223V-287H488V-417H223V-568H550V-700H79ZM541 0H693L736 -152H976L1019 0H1177L964 -700H754ZM773 -284 856 -578 939 -284ZM1381 0H1452V62C1452 77 1447 82 1432 82H1329L1379 160H1462C1524 160 1556 140 1556 66V0H1613C1708 0 1753 -45 1753 -140V-254H1609V-152C1609 -137 1604 -132 1589 -132H1405C1390 -132 1385 -137 1385 -152V-548C1385 -563 1390 -568 1405 -568H1589C1604 -568 1609 -563 1609 -548V-446H1753V-560C1753 -655 1708 -700 1613 -700H1381C1286 -700 1241 -655 1241 -560V-140C1241 -45 1286 0 1381 0ZM1810 0H1962L2005 -152H2245L2288 0H2446L2233 -700H2023ZM2042 -284 2125 -578 2208 -284ZM2682 0H2834L2877 -152H3117L3160 0H3318L3105 -700H2895ZM2914 -284 2997 -578 3080 -284ZM3758 0H3990C4085 0 4130 -45 4130 -140V-254H3986V-152C3986 -137 3981 -132 3966 -132H3782C3767 -132 3762 -137 3762 -152V-548C3762 -563 3767 -568 3782 -568H3966C3981 -568 3986 -563 3986 -548V-446H4130V-560C4130 -655 4085 -700 3990 -700H3758C3663 -700 3618 -655 3618 -560V-140C3618 -45 3663 0 3758 0ZM4381 0H4638C4733 0 4778 -45 4778 -140V-560C4778 -655 4733 -700 4638 -700H4381C4286 -700 4241 -655 4241 -560V-140C4241 -45 4286 0 4381 0ZM4385 -152V-548C4385 -563 4390 -568 4405 -568H4614C4629 -568 4634 -563 4634 -548V-152C4634 -137 4629 -132 4614 -132H4405C4390 -132 4385 -137 4385 -152ZM4919 0H5059V-467L5334 0H5474V-700H5334V-249L5069 -700H4919ZM5768 0H5912V-570H6102V-700H5578V-570H5768ZM6063 0H6215L6258 -152H6498L6541 0H6699L6486 -700H6276ZM6295 -284 6378 -578 6461 -284Z"/></svg><span class="sr">Faça a conta</span></span><span class="ol grad" data-em="6.3310"><svg viewBox="79 -700 6331 700" style="--em:6.3310" aria-hidden="true" focusable="false"><defs><linearGradient id="olg47" x1="0" y1="0" x2="1" y2="0"><stop offset="0" style="stop-color:var(--g1)"/><stop offset="1" style="stop-color:var(--g2)"/></linearGradient></defs><path fill="url(#olg47)" d="M79 0H462C557 0 602 -45 602 -140V-560C602 -655 557 -700 462 -700H79ZM223 -132V-568H438C453 -568 458 -563 458 -548V-152C458 -137 453 -132 438 -132ZM666 0H818L861 -152H1101L1144 0H1302L1089 -700H879ZM898 -284 981 -578 1064 -284ZM1738 0H1968C2063 0 2108 -45 2108 -140V-256C2108 -346 2052 -381 1964 -400L1778 -440C1752 -446 1744 -452 1744 -474V-550C1744 -565 1749 -570 1764 -570H1936C1951 -570 1956 -565 1956 -550V-480H2096V-560C2096 -655 2051 -700 1956 -700H1740C1645 -700 1600 -655 1600 -560V-452C1600 -362 1656 -327 1744 -308L1930 -268C1956 -262 1964 -256 1964 -234V-150C1964 -135 1959 -130 1944 -130H1758C1743 -130 1738 -135 1738 -150V-228H1598V-140C1598 -45 1643 0 1738 0ZM2378 0H2622C2717 0 2762 -45 2762 -140V-700H2618V-152C2618 -137 2613 -132 2598 -132H2402C2387 -132 2382 -137 2382 -152V-700H2238V-140C2238 -45 2283 0 2378 0ZM2838 0H2990L3033 -152H3273L3316 0H3474L3261 -700H3051ZM3070 -284 3153 -578 3236 -284ZM3910 0H4140C4235 0 4280 -45 4280 -140V-256C4280 -346 4224 -381 4136 -400L3950 -440C3924 -446 3916 -452 3916 -474V-550C3916 -565 3921 -570 3936 -570H4108C4123 -570 4128 -565 4128 -550V-480H4268V-560C4268 -655 4223 -700 4128 -700H3912C3817 -700 3772 -655 3772 -560V-452C3772 -362 3828 -327 3916 -308L4102 -268C4128 -262 4136 -256 4136 -234V-150C4136 -135 4131 -130 4116 -130H3930C3915 -130 3910 -135 3910 -150V-228H3770V-140C3770 -45 3815 0 3910 0ZM4342 0H4494L4537 -152H4777L4820 0H4978L4765 -700H4555ZM4574 -284 4657 -578 4740 -284ZM5073 0H5519V-132H5217V-700H5073ZM5565 0H5717L5760 -152H6000L6043 0H6201L5988 -700H5778ZM5797 -284 5880 -578 5963 -284ZM6250 0H6410V-156H6250Z"/></svg><span class="sr">da sua sala.</span></span></span></h2>
-      <p class="lead rv">Mexa nos números. Os valores iniciais são os da projeção da proposta: 24 meses, já com taxa, S-Payment, liquidity e setup.</p>
+      <p class="lead rv">Mexa nos números. Os valores iniciais são os da projeção da proposta: 24 meses, já com a taxa dos jogos, o Sirius One, a liquidity e o setup.</p>
     </div>
     <div class="calc">
       <div class="cbox ctl rv">
@@ -888,8 +890,8 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border:0;border-radiu
         <div class="axis"><span>Mês 1</span><span>6</span><span>12</span><span>18</span><span>24</span></div>
         <div class="brk">
           <div><span>GGR da sala (rake)</span><b id="b-ggr"></b></div>
-          <div><span>(−) Taxa da plataforma · 10%</span><b id="b-tx"></b></div>
-          <div><span>(−) S-Payment e liquidity</span><b id="b-sp"></b></div>
+          <div><span>(−) Taxa dos jogos · 10%</span><b id="b-tx"></b></div>
+          <div><span>(−) Sirius One e liquidity</span><b id="b-sp"></b></div>
           <div><span>(−) Setup da sala · uma vez</span><b>−R$ 50.000</b></div>
           <div class="tot"><span>Resultado</span><b id="b-res"></b></div>
         </div>
@@ -1135,7 +1137,7 @@ addEventListener('resize', () => { fit(); fitHall(); sizePhones(); centerColl();
 /* ===== A conta (mesma fórmula da proposta) =====
    ativos(m) = jogam × cadastros(m) + continuam × ativos(m−1)
    GGR(m) = ativos × partidas × noites × rake médio
-   resultado = GGR − 10% (taxa) − máx(5% GGR; R$ 25 mil) − 10% GGR − setup no mês 1 */
+   resultado = GGR − 10% (taxa dos jogos) − máx(5% GGR; R$ 25 mil) (Sirius One) − 10% GGR (liquidity) − setup no mês 1 */
 const K = 242947 / 700 / 400;   // rake médio por jogador por partida (projeção da proposta)
 const brl = v => 'R$ ' + Math.round(v).toLocaleString('pt-BR');
 const short = v => {
