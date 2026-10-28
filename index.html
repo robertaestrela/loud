@@ -1040,7 +1040,7 @@ const gcards = [...games.children];
 let gx = 0, gLast = 0, gOn = true;
 new IntersectionObserver(es => gOn = es[0].isIntersecting).observe(games);
 function gamesFrame(t) {
-  const dt = Math.min(64, t - (gLast || t)); gLast = t;
+  const raw = t - (gLast || t), dt = raw > 1000 ? 0 : raw; gLast = t;   // segue o relógio real mesmo com poucos quadros; ignora a volta de aba em segundo plano
   if (gOn) {
     if (!RM) gx += dt * .14;   // px por ms, sem parar
     const vw = games.clientWidth, sp = vw < 640 ? 208 : 248, tot = gcards.length * sp;
@@ -1080,7 +1080,7 @@ const bounce = t => 1 + 2.7 * (t - 1) ** 3 + 1.7 * (t - 1) ** 2;   // passa ~10%
 let pT = 0, pLast = 0, pOn = true;
 new IntersectionObserver(es => pOn = es[0].isIntersecting).observe(track);
 function phonesTick(t) {
-  const dt = Math.min(64, t - (pLast || t)); pLast = t;
+  const raw = t - (pLast || t), dt = raw > 1000 ? 0 : raw; pLast = t;
   if (pOn) {
     if (!RM && !html.classList.contains('all')) pT += dt;
     const k = pT / STEP, f = k - Math.floor(k);
