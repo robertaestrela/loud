@@ -396,6 +396,16 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border:0;border-radiu
 .gch.on{background:var(--brand-a16);color:var(--text);box-shadow:inset 0 0 0 1px var(--brand)}
 .gch.on b{color:var(--brand-soft)}
 .gch:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+.ctl label.swr{flex-direction:row;align-items:center;justify-content:space-between;gap:16px;cursor:pointer}
+.swr span{display:flex;flex-direction:column;gap:4px}
+.swr b{font:400 14px/20px var(--f-ui);color:var(--muted)}
+.swr small{font:400 12px/16px var(--f-ui);color:var(--subtle)}
+.swr input{position:absolute;opacity:0;pointer-events:none}
+.sw{position:relative;flex:none;width:44px;height:24px;border-radius:999px;background:#ffffff29;transition:background .2s}
+.sw::after{content:"";position:absolute;top:2px;left:2px;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 1px 4px #0000004d;transition:transform .25s var(--ease)}
+.swr input:checked+.sw{background:var(--brand)}
+.swr input:checked+.sw::after{transform:translateX(20px)}
+.swr input:focus-visible+.sw{outline:2px solid var(--brand);outline-offset:2px}
 .more summary{display:flex;align-items:center;justify-content:space-between;gap:8px;padding-top:16px;border-top:1px solid var(--line);font:500 14px/20px var(--f-ui);color:var(--muted);cursor:pointer;list-style:none;transition:color .2s}
 .more summary::-webkit-details-marker{display:none}
 .more summary:hover{color:var(--text)}
@@ -859,16 +869,16 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border:0;border-radiu
     <p class="kick rv"><b>10</b><i></i>Os números</p>
     <div class="head">
       <h2 class="ttl l rv"><span class="ol" data-em="6.2360"><svg viewBox="62 -700 6236 700" style="--em:6.2360" aria-hidden="true" focusable="false"><path fill="currentColor" d="M253 128H397V0H447C542 0 587 -45 587 -140V-560C587 -655 542 -700 447 -700H202C107 -700 62 -655 62 -560V-140C62 -45 107 0 202 0H253ZM206 -152V-548C206 -563 211 -568 226 -568H423C438 -568 443 -563 443 -548V-152C443 -137 438 -132 423 -132H226C211 -132 206 -137 206 -152ZM861 0H1105C1200 0 1245 -45 1245 -140V-700H1101V-152C1101 -137 1096 -132 1081 -132H885C870 -132 865 -137 865 -152V-700H721V-140C721 -45 766 0 861 0ZM1321 0H1473L1516 -152H1756L1799 0H1957L1744 -700H1534ZM1553 -284 1636 -578 1719 -284ZM2052 0H2192V-467L2467 0H2607V-700H2467V-249L2202 -700H2052ZM2901 0H3045V-570H3235V-700H2711V-570H2901ZM3450 0H3707C3802 0 3847 -45 3847 -140V-560C3847 -655 3802 -700 3707 -700H3450C3355 -700 3310 -655 3310 -560V-140C3310 -45 3355 0 3450 0ZM3454 -152V-548C3454 -563 3459 -568 3474 -568H3683C3698 -568 3703 -563 3703 -548V-152C3703 -137 3698 -132 3683 -132H3474C3459 -132 3454 -137 3454 -152ZM4228 0H4372V-287H4637V-417H4372V-568H4699V-700H4228ZM4808 0H4952V-700H4808ZM5233 0H5465C5560 0 5605 -45 5605 -140V-254H5461V-152C5461 -137 5456 -132 5441 -132H5257C5242 -132 5237 -137 5237 -152V-548C5237 -563 5242 -568 5257 -568H5441C5456 -568 5461 -563 5461 -548V-446H5605V-560C5605 -655 5560 -700 5465 -700H5233C5138 -700 5093 -655 5093 -560V-140C5093 -45 5138 0 5233 0ZM5662 0H5814L5857 -152H6097L6140 0H6298L6085 -700H5875ZM5894 -284 5977 -578 6060 -284Z"/></svg><span class="sr">Quanto fica</span></span><span class="ol brand" data-em="5.0030"><svg viewBox="62 -700 5003 700" style="--em:5.0030" aria-hidden="true" focusable="false"><path fill="currentColor" d="M202 0H434C529 0 574 -45 574 -140V-254H430V-152C430 -137 425 -132 410 -132H226C211 -132 206 -137 206 -152V-548C206 -563 211 -568 226 -568H410C425 -568 430 -563 430 -548V-446H574V-560C574 -655 529 -700 434 -700H202C107 -700 62 -655 62 -560V-140C62 -45 107 0 202 0ZM825 0H1082C1177 0 1222 -45 1222 -140V-560C1222 -655 1177 -700 1082 -700H825C730 -700 685 -655 685 -560V-140C685 -45 730 0 825 0ZM829 -152V-548C829 -563 834 -568 849 -568H1058C1073 -568 1078 -563 1078 -548V-152C1078 -137 1073 -132 1058 -132H849C834 -132 829 -137 829 -152ZM1363 0H1501V-446L1652 -93H1758L1909 -446V0H2051V-700H1893L1707 -288L1521 -700H1363ZM2587 0H2755L2972 -700H2818L2673 -159L2528 -700H2370ZM3180 0H3437C3532 0 3577 -45 3577 -140V-560C3577 -655 3532 -700 3437 -700H3180C3085 -700 3040 -655 3040 -560V-140C3040 -45 3085 0 3180 0ZM3184 -152V-548C3184 -563 3189 -568 3204 -568H3413C3428 -568 3433 -563 3433 -548V-152C3433 -137 3428 -132 3413 -132H3204C3189 -132 3184 -137 3184 -152ZM3841 0H4073C4168 0 4213 -45 4213 -140V-254H4069V-152C4069 -137 4064 -132 4049 -132H3865C3850 -132 3845 -137 3845 -152V-548C3845 -563 3850 -568 3865 -568H4049C4064 -568 4069 -563 4069 -548V-446H4213V-560C4213 -655 4168 -700 4073 -700H3841C3746 -700 3701 -655 3701 -560V-140C3701 -45 3746 0 3841 0ZM4341 0H4812V-132H4485V-293H4750V-423H4485V-568H4812V-700H4341ZM4389 -766H4518L4579 -829L4640 -766H4769L4639 -896H4519ZM4905 0H5065V-156H4905Z"/></svg><span class="sr">com você.</span></span></h2>
-      <p class="lead rv" style="--d:.15s">O GGR da sua sala é o rake das partidas dos seus jogadores. A Sirius desconta só a parte dela. O resto é seu.</p>
+      <p class="lead rv" style="--d:.15s">O rake da sua sala vem das partidas dos seus jogadores. A Sirius desconta só a parte dela. O resto é seu.</p>
     </div>
     <div class="plans">
-      <div class="plan feat rv"><span class="badge">Sua sala</span><span class="lbl">Você recebe</span><p class="price">75%</p><p class="per">do GGR, todo mês</p>
+      <div class="plan feat rv"><span class="badge">Sua sala</span><span class="lbl">Você recebe</span><p class="price">75%</p><p class="per">do rake, todo mês</p>
         <div class="split-bar" aria-hidden="true"><i style="flex:75"></i><i style="flex:10"></i><i style="flex:10"></i><i style="flex:5"></i></div>
         <ul><li><span><svg><use href="#i-check"/></svg>Pagamento até o dia 15</span></li><li><span><svg><use href="#i-check"/></svg>Sem saldo negativo por desempenho</span></li><li><span><svg><use href="#i-check"/></svg>Painel on-line com tudo</span></li></ul>
-        <p class="fine">Com o Sirius One acima do mínimo (GGR acima de R$ 500 mil por mês).</p></div>
-      <div class="plan rv" style="--d:.1s"><span class="lbl">Taxas Sirius</span><p class="price">25%</p><p class="per">do GGR, compensado no extrato</p>
-        <ul><li><span>Taxa dos jogos</span><b>10% do rake</b></li><li><span class="two">Sirius One<small>Player account manager</small></span><b>5% do GGR</b></li><li><span>Liquidity</span><b>10% do GGR</b></li></ul>
-        <p class="fine">O Sirius One tem mínimo de R$ 25 mil por mês. A liquidity dá acesso às mesas compartilhadas.</p></div>
+        <p class="fine">Com liquidity e o Sirius One acima do mínimo (rake da sala acima de R$ 500 mil por mês).</p></div>
+      <div class="plan rv" style="--d:.1s"><span class="lbl">Taxas Sirius</span><p class="price">25%</p><p class="per">do rake, compensado no extrato</p>
+        <ul><li><span>Taxa dos jogos</span><b>10% do rake</b></li><li><span class="two">Sirius One<small>Player account manager</small></span><b>5% do rake</b></li><li><span class="two">Liquidity<small>Opcional</small></span><b>10% do rake</b></li></ul>
+        <p class="fine">O Sirius One tem mínimo de R$ 25 mil por mês. A liquidity é opcional e dá acesso às mesas compartilhadas.</p></div>
       <div class="plan rv" style="--d:.2s"><span class="lbl">Setup da sala</span><p class="price">R$ 50 mil</p><p class="per">uma vez, na assinatura</p>
         <ul><li><span><svg><use href="#i-check"/></svg>Site e app com a sua marca</span></li><li><span><svg><use href="#i-check"/></svg>Domínio no seu nome</span></li><li><span><svg><use href="#i-check"/></svg>Personagem da marca</span></li><li><span><svg><use href="#i-check"/></svg>No ar em 1 semana</span></li></ul></div>
     </div>
@@ -904,6 +914,7 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border:0;border-radiu
         <label><span class="top">Novos cadastros no 1º mês<output id="o-c"></output></span><input type="range" id="c" min="100" max="20000" step="100" value="1000"></label>
         <label><span class="top">Partidas por jogador, por noite<output id="o-p"></output></span><input type="range" id="p" min="1" max="60" step="1" value="20"></label>
         <label><span class="top">Ticket médio por jogador, por partida<output id="o-b"></output></span><input type="range" id="b" min="1" max="50" step="1" value="1"></label>
+        <label class="swr"><span><b>Liquidity</b><small>Mesas compartilhadas · 10% do rake</small></span><input type="checkbox" id="lq" checked><i class="sw" aria-hidden="true"></i></label>
         <details class="more"><summary>Mais ajustes<svg><use href="#i-chev"/></svg></summary>
           <div class="more-in">
             <label><span class="top">Crescimento ao mês<output id="o-g"></output></span><input type="range" id="g" min="0" max="30" step="1" value="10"></label>
@@ -922,10 +933,10 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border:0;border-radiu
         <details class="more conta"><summary>Ver a conta<svg><use href="#i-chev"/></svg></summary>
           <div class="brk">
             <div><span>Rodadas no mês 24</span><b id="rnd"></b></div>
-            <div><span>GGR da sala (rake)</span><b id="b-ggr"></b></div>
+            <div><span>Rake da sala</span><b id="b-ggr"></b></div>
             <div><span>(−) Taxa dos jogos · 10% do rake</span><b id="b-tx"></b></div>
-            <div><span class="two">(−) Sirius One · 5% do GGR<small id="b-min"></small></span><b id="b-so"></b></div>
-            <div><span>(−) Liquidity · 10% do GGR</span><b id="b-lq"></b></div>
+            <div><span class="two">(−) Sirius One · 5% do rake<small id="b-min"></small></span><b id="b-so"></b></div>
+            <div><span>(−) Liquidity · 10% do rake</span><b id="b-lq"></b></div>
             <div><span>(−) Setup da sala · uma vez</span><b>−R$ 50.000</b></div>
             <div class="tot"><span>Resultado</span><b id="b-res"></b></div>
           </div>
@@ -1172,9 +1183,9 @@ addEventListener('resize', () => { fit(); fitHall(); sizePhones(); centerColl();
 /* ===== A conta (regra da proposta: o rake de cada mesa é dividido entre os jogadores, então a conta é por jogador) =====
    ativos(m) = jogam × cadastros(m) + continuam × ativos(m−1)
    rake por jogador, por partida = ticket médio × rake médio dos jogos escolhidos
-   GGR(m) = ativos × partidas × noites × rake por jogador
+   rake(m) = ativos × partidas × noites × rake por jogador
    rodadas(m) = ativos × partidas × noites ÷ jogadores por mesa (média dos jogos escolhidos)
-   resultado = GGR − 10% (taxa dos jogos) − máx(5% GGR; R$ 25 mil) (Sirius One) − 10% GGR (liquidity) − setup no mês 1 */
+   resultado = rake − 10% (taxa dos jogos) − máx(5% do rake; R$ 25 mil) (Sirius One) − 10% do rake (liquidity, opcional) − setup no mês 1 */
 const brl = v => (v < 0 ? '−' : '') + 'R$ ' + Math.round(Math.abs(v)).toLocaleString('pt-BR');
 const short = v => {
   const a = Math.abs(v), s = v < 0 ? '−' : '';
@@ -1197,15 +1208,15 @@ function calc() {
     el.style.setProperty('--p', ((el.value - el.min) / (el.max - el.min) * 100) + '%');
   });
   const gs = $$('.gch.on'), rk = gs.reduce((t, g) => t + +g.dataset.r, 0) / gs.length / 100;
-  const perMesa = gs.reduce((t, g) => t + 1 / g.dataset.s, 0) / gs.length, rpp = v.b * rk;
+  const perMesa = gs.reduce((t, g) => t + 1 / g.dataset.s, 0) / gs.length, rpp = v.b * rk, liq = $('#lq').checked;
   $('#o-j').textContent = 'rake ' + pct(rk * 100);
   let act = 0, tot = 0, ggrT = 0, txT = 0, soT = 0, lqT = 0, minM = 0, rodadas = 0; const res = [];
   for (let m = 1; m <= 24; m++) {
     const neu = v.c * Math.pow(1 + v.g / 100, m - 1);
     act = v.a / 100 * neu + v.r / 100 * act;
     rodadas = act * v.p * v.n * perMesa;
-    const ggr = act * rpp * v.p * v.n, tx = .1 * ggr, lq = .1 * ggr;
-    const so = Math.max(.05 * ggr, 25000);   // mínimo obrigatório do cliente: R$ 25 mil até 5% do GGR passar disso
+    const ggr = act * rpp * v.p * v.n, tx = .1 * ggr, lq = liq ? .1 * ggr : 0;   // liquidity é opcional
+    const so = Math.max(.05 * ggr, 25000);   // mínimo obrigatório do cliente: R$ 25 mil até 5% do rake passar disso
     if (.05 * ggr < 25000) minM++;
     const net = ggr - tx - so - lq - (m === 1 ? 50000 : 0);
     res.push(net); tot += net; ggrT += ggr; txT += tx; soT += so; lqT += lq;
@@ -1213,7 +1224,7 @@ function calc() {
   animateTo(tot);
   $('#m24').textContent = short(res[23]);
   $('#b-ggr').textContent = brl(ggrT); $('#b-tx').textContent = '−' + brl(txT);
-  $('#b-so').textContent = '−' + brl(soT); $('#b-lq').textContent = '−' + brl(lqT);
+  $('#b-so').textContent = '−' + brl(soT); $('#b-lq').textContent = liq ? '−' + brl(lqT) : 'desligada';
   $('#b-min').textContent = minM ? 'mínimo de R$ 25 mil/mês em ' + minM + ' dos 24 meses' : 'acima do mínimo de R$ 25 mil nos 24 meses';
   $('#b-res').textContent = brl(tot);
   $('#rnd').textContent = '≈ ' + cnt(rodadas);
@@ -1231,7 +1242,8 @@ function animateTo(target) {
   };
   raf = requestAnimationFrame(step);
 }
-$$('.ctl input').forEach(el => el.addEventListener('input', calc));
+$$('.ctl input[type=range]').forEach(el => el.addEventListener('input', calc));
+$('#lq').addEventListener('change', calc);
 $$('.gch').forEach(b => b.addEventListener('click', () => {
   if (b.classList.contains('on') && $$('.gch.on').length === 1) return;   // fica pelo menos um jogo na conta
   b.classList.toggle('on'); b.setAttribute('aria-pressed', b.classList.contains('on')); calc();
